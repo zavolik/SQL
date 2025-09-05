@@ -28,11 +28,11 @@ INSERT INTO patients (patient_id, first_name, last_name, gender, birth_date, cit
     ('3', 'Марина', 'Спиридонова', 'Ж', '1989-14-11', 'Москва', 'KR', 'пыль', 167, 63),
     ('4', 'Кузьма', 'Скоробогатов', 'М', '2013-08-01', 'Волгоград', 'MC', '-', 160, 57);
     
-CREATE table admitions (patient_id INT, admition_data DATE, discharge_date DATE,
+CREATE table admissions (patient_id INT, admission_data DATE, discharge_date DATE,
                         diagnosis VARCHAR(50), attending_doctor_id INT,
                         FOREIGN KEY (patient_id) REFERENCES patients (patient_id),
                         FOREIGN KEY (attending_doctor_id) REFERENCES doctors (doctor_id));
-INSERT INTO admitions (patient_id, admition_data, discharge_date, diagnosis, attending_doctor_id)
+INSERT INTO admissions (patient_id, admission_data, discharge_date, diagnosis, attending_doctor_id)
 	VALUES (1, '2022-12-09', '2022-12-09', 'перелом','2'),
     (2, '2022-12-12','2022-12-13', 'ОРВИ', '5'),
     (3, '2024-12-12','2024-12-13', 'коронавирус', '5'),
@@ -41,7 +41,7 @@ INSERT INTO admitions (patient_id, admition_data, discharge_date, diagnosis, att
 SELECT * FROM doctors
 SELECT * FROM province_names
 SELECT * FROM patients
-SELECT * FROM admitions
+SELECT * FROM admissions
 
 Задача: составь запрос, который выведет фамилию, имя и количество посещений каждого доктора. 
 Все пациенты были осмотрены докторами. 
